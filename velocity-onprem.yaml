@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: velocity-deployment
+  name: velocity-onprem-deployment
   namespace: default
   labels:
     app: velocity
 spec:
-  replicas: 2
+  replicas: 0
   selector:
     matchLabels:
       app: velocity-onprem
