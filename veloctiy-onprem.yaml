@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: velocity-deployment
+  namespace: default
+  labels:
+    app: velocity
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: velocity-onprem
+  template:
+    metadata:
+      labels:
+        app: velocity-onprem
+    spec:
+      containers:
+      - name: velocity-container
+        image: 756266714368.dkr.ecr.ap-northeast-2.amazonaws.com/velocity:onprem_3
+        ports:
+        - containerPort: 25565
+
